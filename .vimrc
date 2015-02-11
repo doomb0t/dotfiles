@@ -6,14 +6,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'vim-scripts/c.vim'
 Plugin 'ciaranm/detectindent'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'fatih/vim-go'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'gmarik/vundle'
 Plugin 'itchyny/lightline.vim'
-Plugin 'jwhitley/vim-matchit'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'lokaltog/vim-easymotion'
@@ -113,3 +109,5 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
+map <F3> :NERDTree
+map <F4> :NERDTreeToggle
