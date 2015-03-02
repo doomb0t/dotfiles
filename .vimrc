@@ -35,7 +35,7 @@ filetype plugin indent on    " required
 syntax on
 filetype on
 
-colorscheme smyck
+colorscheme evening
 
 set cursorline
 set expandtab shiftwidth=4
