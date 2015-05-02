@@ -109,5 +109,5 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
-map <F3> :NERDTree
+map <F3> :NERDTree $HOME
 map <F4> :NERDTreeToggle
