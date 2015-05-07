@@ -28,7 +28,5 @@ export EDITOR=/usr/bin/vim
 test -s ~/.alias && . ~/.alias || true
 export PATH=$PATH:~/usr/bin/
 export PATH=$PATH:~/usr/bin/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/lib
-export C_INCLUDE_PATH=$C_INCLUDE_PATH:~/usr/include
-export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:~/usr/include
+
 
