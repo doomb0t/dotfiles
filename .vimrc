@@ -2,7 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/etc/vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'vim-scripts/c.vim'
 Plugin 'ciaranm/detectindent'
@@ -35,7 +35,7 @@ filetype plugin indent on    " required
 syntax on
 filetype on
 
-colorscheme evening
+colorscheme darkblack
 
 set cursorline
 set expandtab shiftwidth=4
@@ -111,3 +111,13 @@ let g:lightline = {
       \ }
 map <F3> :NERDTree $HOME
 map <F4> :NERDTreeToggle
+
+"Syntastic Conf
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 1
