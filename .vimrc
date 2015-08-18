@@ -2,8 +2,9 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=/etc/vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-scripts/c.vim'
 Plugin 'ciaranm/detectindent'
 Plugin 'fatih/vim-go'
@@ -35,7 +36,7 @@ filetype plugin indent on    " required
 syntax on
 filetype on
 
-colorscheme darkblack
+colorscheme blacklight 
 
 set cursorline
 set expandtab shiftwidth=4
