@@ -1,0 +1,117 @@
+# This .hgrc is recommended for working on the Adblock Plus project.
+#
+# When using this as your .hgrc as-is, it provides a nicer user interface and
+# enables some extensions that are useful for working on pretty much any
+# project.
+#
+# The commented parts either do not work on all systems, are a matter of taste,
+# or specific to the Adblock Plus project and might not make sense for everyone.
+# Have a good look and decide for yourself what you want to enable.
+
+## User interface controls
+[ui]
+editor = vim
+# Sets your global user name. If you do not uncomment this, you will have to
+# set it on a per-repository basis.
+username = Jon Sonesen <jon@adblockplus.org>
+
+## Diff (i.e. patch) format configuration
+[diff]
+
+# We use Git's extended diff format which includes more information (such as
+# changes to binary files).
+git = true
+
+# Makes diff output include eight lines of context.
+unified = 8
+
+## Defaults
+#
+# These change the default behaviour of common Mercurial commands.
+[defaults]
+
+# `hg log` shows the history of all branches by default, not just that of the
+# current branch. The `--graph` option shows this as an ASCII tree and marks
+# the revision you are currently at, which makes the history a lot easier to
+# read.
+log = --graph
+
+# The "master" bookmark
+#
+# Most repositories of the Adblock Plus project use bookmarked branches to track
+# multiple lines of development. The bookmark for the main line of development
+# is, by convention, called "master".
+#
+# Unless you are working with Mercurial repositories that do not have a "master"
+# bookmark, it is recommended that you uncomment the following defaults.
+
+# `hg clone` updates to the latest changeset on the default branch. When working
+# with repositories that have a "master" branch, you will want to update to that
+# one instead, which you can do by adding `--updaterev master`. By uncommenting
+# the following line, you won't have to worry about that. Note that when
+# enabling this, you can still update to the latest changeset in the default
+# branch by specifying `--updaterev default`.
+#clone = --updaterev master
+
+# `hg push` and `hg outgoing` will by default include all changesets, including
+# bookmarked branches that you might want to just keep locally. To avoid this,
+# you need to add `--rev master`. By uncommenting the following two lines, you
+# won't have to worry about that. Note that when enabling this, you can still
+# push any branch by specifying the `--rev` option.
+#push = --rev master
+#outgoing = --rev master
+
+## Extensions
+#
+# Mercurial is, out of the box, fairly minimal. A lot of useful functionality
+# comes as extensions. Most of the useful extensions are even part of the
+# default Mercurial distribution, but not enabled by default.
+[extensions]
+hgreview = ~/workspace/eyeo/adblockplus/coding_tools_env/codingtools/hgreview.py
+# Progress extension, shows an ASCII progress bar for operations that take
+# longer.
+progress =
+
+# Color extension, colors the output of commands like `hg log`. Enable it if
+# your terminal supports colors (assuming you like colors).
+#color =
+
+# Pager extension, shows the output of commands like `hg log` in the terminal
+# pager (e.g. less) configured below in the [pager] section.
+#pager =
+
+# Record extension, provides the `hg record` command that allows you to make
+# partial commits.
+record =
+
+# Purge extension, provides the `hg purge` (aliased to `hg clean`) command that
+# allows you to remove unversioned files.
+purge =
+
+# Rebase extension, provides the `hg rebase` command, see:
+# https://www.mercurial-scm.org/wiki/RebaseExtension
+rebase =
+
+# Strip extension, provides the `hg strip` command that allows you to remove
+# existing changesets.
+strip =
+
+# Histedit extension. Provides the `hg histedit` command that allows you to
+# change and merge existing changesets, see:
+# https://www.mercurial-scm.org/wiki/HisteditExtension
+histedit =
+
+# Shelve extension, provides the `hg shelve` command that allows you to set
+# pending changes aside, see:
+# https://www.mercurial-scm.org/wiki/ShelveExtension
+shelve =
+
+# Review extension, provides the `hg review` command that makes it easier to
+# upload reviews to codereview.adblockplus.org. You need to adjust the path
+# so that it points to hgreview.py file in this repository.
+#review = /path/to/codereview/hgreview.py
+
+# Configuration for the pager extension. This doesn't have any effect unless
+# you enable the pager extension above.
+[pager]
+pager = LESS='FSRX' less

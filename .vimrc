@@ -4,8 +4,7 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'klen/python-mode'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-scripts/c.vim'
 Plugin 'ciaranm/detectindent'
@@ -19,7 +18,6 @@ Plugin 'lokaltog/vim-easymotion'
 Plugin 'mileszs/ack.vim'
 Plugin 'mitsuhiko/vim-jinja'
 Plugin 'myusuf3/numbers.vim'
-Plugin 'nvie/vim-flake8'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -126,8 +124,3 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_check_on_open = 1
 hi CursorLine cterm=NONE ctermbg=darkgrey ctermfg=green
-
-"Disable python mode completion
-let g:pymode_rope_lookup_project = 0
-let g:pymode_rope_completion = 0
-let g:pymode_rope_complete_on_dot = 0
