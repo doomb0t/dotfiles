@@ -4,13 +4,12 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-scripts/c.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ciaranm/detectindent'
-Plugin 'fatih/vim-go'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'gmarik/vundle'
 Plugin 'itchyny/lightline.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kien/rainbow_parentheses.vim'
@@ -20,7 +19,6 @@ Plugin 'mitsuhiko/vim-jinja'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
@@ -34,7 +32,6 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 syntax on
-filetype on
 
 colorscheme 256-grayvim 
 
@@ -55,7 +52,6 @@ let mapleader=","
 nmap <leader>q :nohlsearch<CR>
 nmap <leader>t :NERDTreeToggle<CR>
 nmap <space><space> :w<cr>
-nmap <F8> :TagbarToggle<CR>
 
 nmap j gj
 nmap k gk
@@ -77,11 +73,6 @@ au BufNewFile,BufRead *.html,*.mail setlocal ft=htmljinja
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile TODO,*.TODO,*.todo set filetype=todo
 
-let NERDTreeIgnore=['\.pyc$']
-let NERDTreeMinimalUI=1
-let NERDTreeDirArrows=1
-let NERDTreeShowHidden=1
-
 let g:go_disable_autoinstall=1
 let g:go_fmt_autosave = 0
 
@@ -91,6 +82,7 @@ let g:ctrlp_mruf_last_entered=1
 
 let g:ackhighlight=1
 
+"Lightline
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
@@ -110,8 +102,6 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
-map <F3> :NERDTree $HOME
-map <F4> :NERDTreeToggle
 
 "Syntastic Conf
 set statusline+=%#warningmsg#
@@ -120,7 +110,6 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_check_on_open = 1
 hi CursorLine cterm=NONE ctermbg=darkgrey ctermfg=green

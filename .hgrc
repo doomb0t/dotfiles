@@ -67,7 +67,7 @@ log = --graph
 # comes as extensions. Most of the useful extensions are even part of the
 # default Mercurial distribution, but not enabled by default.
 [extensions]
-hgreview = ~/workspace/eyeo/adblockplus/coding_tools_env/codingtools/hgreview.py
+hgreview = ~/eyeo/codingtools/hgreview.py
 # Progress extension, shows an ASCII progress bar for operations that take
 # longer.
 progress =
@@ -110,7 +110,7 @@ shelve =
 # upload reviews to codereview.adblockplus.org. You need to adjust the path
 # so that it points to hgreview.py file in this repository.
 #review = /path/to/codereview/hgreview.py
-
+color = 
 # Configuration for the pager extension. This doesn't have any effect unless
 # you enable the pager extension above.
 [pager]
