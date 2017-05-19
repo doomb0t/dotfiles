@@ -5,8 +5,6 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ciaranm/detectindent'
 Plugin 'flazz/vim-colorschemes'
@@ -27,6 +25,9 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'wellle/targets.vim'
 Plugin 'yegappan/mru'
+Plugin 'w0rp/ale'
+Plugin 'jelera/vim-javascript-syntax'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -34,7 +35,6 @@ filetype plugin indent on    " required
 syntax on
 
 colorscheme 256-grayvim 
-
 set cursorline
 set expandtab shiftwidth=4
 set exrc " enable per-directory .vimrc files
@@ -103,13 +103,11 @@ let g:lightline = {
       \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
 
-"Syntastic Conf
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_check_on_open = 1
 hi CursorLine cterm=NONE ctermbg=darkgrey ctermfg=green
+
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'python': ['flake8'],
+\}
+
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2
