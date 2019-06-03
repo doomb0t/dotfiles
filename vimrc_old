@@ -6,7 +6,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'ciaranm/detectindent'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'itchyny/lightline.vim'
 Plugin 'kien/ctrlp.vim'
@@ -18,6 +17,7 @@ Plugin 'myusuf3/numbers.vim'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-repeat'
@@ -48,7 +48,6 @@ set secure " disable unsafe commands in local .vimrc files
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.pyc/*
 
 let mapleader=","
-
 nmap <leader>q :nohlsearch<CR>
 nmap <leader>t :NERDTreeToggle<CR>
 nmap <space><space> :w<cr>
